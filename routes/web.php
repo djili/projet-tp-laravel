@@ -28,4 +28,8 @@ Route::get('etudiants/edit/{id}','EtudiantController@edit')->name('editEtudiant'
 
 Route::put('etudiants/update/{id}','EtudiantController@update')->name('updateEtudiant')->where('id','[0-9]+');
 
+Route::get('etudiants/delete/{id}','EtudiantController@delete')->name('deleteEtudiant')->where('id','[0-9]+');
+
+
+
 

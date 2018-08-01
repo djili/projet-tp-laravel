@@ -17,10 +17,19 @@
             {{$etudiant->prenom}}
         </th>
         <th>
-            <a href="{{route('showEtudiant', $etudiant->id)}}">{{trans('commun.details')}}</a>
+            <button type="button" class="btn btn-primary">
+                <a href="{{route('showEtudiant', $etudiant->id)}}" style="color:inherit">{{trans('commun.details')}}</a>
+            </button>
         </th>
         <th>
-            <a href="{{route('editEtudiant', $etudiant->id)}}">{{trans('commun.modifier')}}</a>
+            <button type="button" class="btn btn-primary">
+                <a href="{{route('editEtudiant', $etudiant->id)}}" style="color:inherit">{{trans('commun.modifier')}}</a>
+            </button>
+        </th>
+        <th>
+            <button type="button" class="btn btn-primary">
+                <a href="{{route('deleteEtudiant', $etudiant->id)}}" style="color:inherit">{{trans('commun.supprimer')}}</a>
+            </button>
         </th>
     </tr>
     @endforeach

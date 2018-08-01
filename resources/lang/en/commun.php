@@ -5,7 +5,8 @@ return [
     'details' => 'Detail',
     'modifier' => 'Change',
     'accueil' => "Dashboard",
-    ''
+    'supprimer' => "Delete",
+
 
 
 ];

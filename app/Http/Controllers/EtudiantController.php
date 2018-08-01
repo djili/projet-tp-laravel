@@ -46,6 +46,11 @@ class EtudiantController extends Controller
         $etudiant->prenom = $request->input('prenom');
         $etudiant->save();
         return back()->with('status',trans('etudiant.msgmiseajourok'));
+    }
 
+    public function delete($id){
+        $etudiant = Etudiant::find($id);
+        $etudiant->delete();
+        return back()->with('status',trans('etudiant.msgsuppressionok'));
     }
 }
