@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Projet Abdou khadre DIOP') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -63,6 +63,17 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+                                    @foreach ( config('app.languages') as $local_code => $local_string)
+                                        @if($local_string !== config('app.lang_name'))
+                                            <?php
+                                            $style = 'padding:0';
+                                            if ($local_code == session('applocale')){
+                                                $style = 'padding:0;border-bottom:2px solid red;';
+                                            }
+                                            ?>
+                                            <a style='<?php echo $style;?>' href="{!! url('/') !!}/{{ $local_code }}/"><img src=http://web-presence.ch/img/temp/8/{{ $local_string }} alt="{{ $local_string }}" /></a>
+                                        @endif
+                                    @endforeach
                                 </div>
                             </li>
                         @endguest

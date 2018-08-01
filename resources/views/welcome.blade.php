@@ -74,8 +74,21 @@
                         <a href="{{ route('login') }}">Login</a>
                         <a href="{{ route('register') }}">Register</a>
                     @endauth
-                </div>
+
             @endif
+                @foreach ( config('app.languages') as $local_code => $local_string)
+                    @if($local_string !== config('app.lang_name'))
+                        <?php
+                        $style = 'padding:0';
+                        if ($local_code == session('applocale')){
+                            $style = 'padding:0;border-bottom:2px solid red;';
+                        }
+                        ?>
+                        <a style='<?php echo $style;?>' href="{!! url('/') !!}/{{ $local_code }}/"><img src=http://web-presence.ch/img/temp/8/{{ $local_string }} alt="{{ $local_string }}" /></a>
+                    @endif
+                @endforeach
+                </div>
+        </div>
 
             <div class="content">
                 <div class="title m-b-md">

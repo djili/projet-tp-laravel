@@ -78,7 +78,13 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'fr',
+    'languages' => [
+        'en' => 'English',
+        'fr' => 'Français',
+
+    ],
+    'fallback_locale' => 'fr',
 
     /*
     |--------------------------------------------------------------------------
